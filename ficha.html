@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Red & Blue Chair — Gerrit Rietveld, 1918. Ficha técnica y condiciones de alquiler en Margo Space Design, Barcelona.">
+  <title>Red &amp; Blue Chair — Ficha técnica — Margo Space Design</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="media/foto/marca/logo-margo-space.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       NAVBAR
+       ========================================================= -->
+  <nav class="navbar navbar-expand-lg navbar-ms fixed-top" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="media/foto/marca/logo-margo-space.png"
+             alt="Margo Space Design" class="navbar-logo">
+      </a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false"
+              aria-label="Abrir menú de navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="catalogo.html">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-ms-warm" href="contacto.html">Solicitar pieza</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================================================
+       MODAL — Ampliar imagen (componente Bootstrap: Modal)
+       ========================================================= -->
+  <div class="modal fade" id="imgModal" tabindex="-1" aria-labelledby="imgModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content" style="background: #111; border:none;">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title text-white" id="imgModalLabel">Red &amp; Blue Chair — Gerrit Rietveld</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=1000&q=85"
+               class="img-fluid w-100" style="border-radius:2px;"
+               alt="Red & Blue Chair, Gerrit Rietveld, 1918 — imagen ampliada">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       BREADCRUMB
+       ========================================================= -->
+  <div class="page-header page-header-sm">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item"><a href="catalogo.html">Catálogo</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Red &amp; Blue</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- =========================================================
+         FICHA DE PRODUCTO — Layout: 2 columnas (imagen | info)
+         ========================================================= -->
+    <section class="py-5 py-lg-6" aria-labelledby="product-title">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+
+          <!-- Columna imagen -->
+          <div class="col-md-6">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=700&q=80"
+                   class="img-fluid w-100"
+                   style="border-radius:2px; cursor:zoom-in;"
+                   alt="Red &amp; Blue Chair de Gerrit Rietveld (1918)"
+                   data-bs-toggle="modal"
+                   data-bs-target="#imgModal">
+              <button class="btn btn-sm position-absolute bottom-0 end-0 m-2"
+                      style="background:rgba(0,0,0,0.55); color:#fff; border-radius:2px; font-size:0.75rem;"
+                      data-bs-toggle="modal" data-bs-target="#imgModal"
+                      aria-label="Ampliar imagen">
+                <i class="bi bi-arrows-fullscreen me-1"></i>Ampliar
+              </button>
+            </div>
+            <!-- Thumbnails -->
+            <div class="row g-2 mt-2">
+              <div class="col-4">
+                <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=220&q=70"
+                     class="img-fluid w-100" style="border-radius:2px; cursor:pointer; opacity:0.85;"
+                     alt="Vista 1 de la Red & Blue Chair">
+              </div>
+              <div class="col-4">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=220&q=70"
+                     class="img-fluid w-100" style="border-radius:2px; cursor:pointer; opacity:0.6;"
+                     alt="Vista 2 de la Red & Blue Chair">
+              </div>
+              <div class="col-4">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=220&q=70"
+                     class="img-fluid w-100" style="border-radius:2px; cursor:pointer; opacity:0.6;"
+                     alt="Vista 3 de la Red & Blue Chair en ambiente">
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna información -->
+          <div class="col-md-6">
+            <span class="badge-cat d-inline-block mb-3">Asiento</span>
+            <h1 id="product-title" class="mb-1">Red &amp; Blue Chair</h1>
+            <p class="designer-line mb-2" style="font-size:1.05rem;">Gerrit Thomas Rietveld — 1918</p>
+            <div class="mb-3">
+              <span class="badge-avail me-2">Disponible</span>
+              <span class="text-muted small">Ref. MS-001</span>
+            </div>
+
+            <!-- Precio + CTA -->
+            <div class="d-flex align-items-end gap-4 mb-4 py-3 border-top border-bottom" style="border-color:var(--ms-border) !important;">
+              <div>
+                <p class="mb-0 small text-muted">Alquiler/día</p>
+                <span class="product-price" style="font-size:1.8rem;">45 €</span>
+              </div>
+              <div>
+                <p class="mb-0 small text-muted">Depósito</p>
+                <span style="font-size:1.1rem; font-weight:500;">200 €</span>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mb-4">
+              <a href="contacto.html" class="btn btn-ms-warm">
+                <i class="bi bi-envelope me-2"></i>Solicitar reserva
+              </a>
+              <button class="btn btn-ms" type="button">
+                <i class="bi bi-share me-2"></i>Compartir
+              </button>
+            </div>
+
+            <!-- Lista de características -->
+            <h2 class="h5 mb-3">Características</h2>
+            <ul class="list-unstyled product-features mb-0">
+              <li class="mb-2">
+                <i class="bi bi-check2 me-2" style="color:var(--ms-warm);"></i>
+                Pieza emblemática del Constructivismo y De Stijl
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check2 me-2" style="color:var(--ms-warm);"></i>
+                Estructura en madera lacada en negro con planos rojo y azul
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check2 me-2" style="color:var(--ms-warm);"></i>
+                Reproducción de alta fidelidad autorizada por Cassina
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check2 me-2" style="color:var(--ms-warm);"></i>
+                Ideal para sesiones fotográficas, escaparates y eventos editoriales
+              </li>
+              <li>
+                <i class="bi bi-check2 me-2" style="color:var(--ms-warm);"></i>
+                Incluye seguro de transporte en Barcelona ciudad
+              </li>
+            </ul>
+          </div>
+
+        </div><!-- /row -->
+      </div>
+    </section>
+
+    <!-- =========================================================
+         ACORDEÓN DE DETALLES — Layout: full-width, 3 secciones
+         Componente Bootstrap: Accordion
+         ========================================================= -->
+    <section class="py-5 bg-white" aria-labelledby="details-heading">
+      <div class="container">
+        <h2 id="details-heading" class="h4 mb-4">Más información</h2>
+        <div class="accordion accordion-ms" id="fichaAccordion">
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#acc-desc"
+                      aria-expanded="true" aria-controls="acc-desc">
+                Descripción
+              </button>
+            </h3>
+            <div id="acc-desc" class="accordion-collapse collapse show" data-bs-parent="#fichaAccordion">
+              <div class="accordion-body">
+                <p>La <strong>Red &amp; Blue Chair</strong> (Rood blauwe stoel) fue diseñada por Gerrit Thomas Rietveld en 1918, siendo una de las primeras obras que materializan los principios del movimiento <em>De Stijl</em>: la reducción de las formas a elementos esenciales y el uso de los tres colores primarios junto al negro, blanco y gris.</p>
+                <p class="mb-0">Su estructura de listones de madera lacada demuestra que una silla puede construirse descomponiendo sus partes en el espacio, prescindiendo de la carpintería tradicional. Es hoy un símbolo del diseño moderno reconocido mundialmente y patrimonio del Museo Stedelijk de Ámsterdam.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#acc-specs"
+                      aria-expanded="false" aria-controls="acc-specs">
+                Especificaciones técnicas
+              </button>
+            </h3>
+            <div id="acc-specs" class="accordion-collapse collapse" data-bs-parent="#fichaAccordion">
+              <div class="accordion-body">
+                <!-- Tabla de especificaciones -->
+                <div class="table-responsive">
+                  <table class="specs-table w-100">
+                    <caption class="visually-hidden">Especificaciones técnicas de la Red &amp; Blue Chair</caption>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Diseñador</th>
+                        <td>Gerrit Thomas Rietveld</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Año</th>
+                        <td>1918</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Fabricante</th>
+                        <td>Cassina (reproducción autorizada)</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Material estructura</th>
+                        <td>Madera de haya lacada</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Material asiento/respaldo</th>
+                        <td>Tablero de madera lacada</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Colores</th>
+                        <td>Negro (estructura), rojo (asiento), azul (respaldo), amarillo (extremos)</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Alto</th>
+                        <td>88 cm</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Ancho</th>
+                        <td>66 cm</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Profundidad</th>
+                        <td>83 cm</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Altura de asiento</th>
+                        <td>33 cm</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Peso</th>
+                        <td>9 kg</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#acc-rental"
+                      aria-expanded="false" aria-controls="acc-rental">
+                Condiciones de alquiler
+              </button>
+            </h3>
+            <div id="acc-rental" class="accordion-collapse collapse" data-bs-parent="#fichaAccordion">
+              <div class="accordion-body">
+                <ul class="values-list mb-0">
+                  <li>Mínimo de alquiler: <strong>1 día</strong></li>
+                  <li>Depósito reembolsable: <strong>200 €</strong> (devuelto en 48 h tras la devolución de la pieza)</li>
+                  <li>Entrega y recogida en Barcelona ciudad <strong>incluida</strong> en el precio</li>
+                  <li>Fuera de Barcelona ciudad, consultar tarifa de transporte</li>
+                  <li>La pieza debe devolverse en el mismo estado en que fue entregada</li>
+                  <li>Se requiere firma de contrato de cesión temporal</li>
+                  <li>Para producciones de varios días, solicitar precio personalizado</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PIEZAS RELACIONADAS — Grid de 3 tarjetas
+         Layout: row col-md-4
+         ========================================================= -->
+    <section class="py-5" aria-labelledby="related-heading">
+      <div class="container">
+        <h2 id="related-heading" class="mb-4">Piezas relacionadas</h2>
+        <div class="row g-4">
+          <div class="col-sm-6 col-md-4">
+            <article class="product-card">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1493663284031-b7e3aaa4cdc2?auto=format&fit=crop&w=500&q=75"
+                     alt="Tulip Chair, Eero Saarinen, 1956">
+              </div>
+              <div class="card-body">
+                <span class="badge-cat d-inline-block mb-2">Asiento</span>
+                <h3 class="card-title">Tulip Chair</h3>
+                <p class="designer-line mb-3">Eero Saarinen — 1956</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="product-price">50 €/día</span>
+                  <a href="catalogo.html" class="btn btn-ms btn-sm">Ver ficha</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <article class="product-card">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1594938298603-c8148c4b4057?auto=format&fit=crop&w=500&q=75"
+                     alt="Plopp Stool, Oskar Zieta, 2008">
+              </div>
+              <div class="card-body">
+                <span class="badge-cat d-inline-block mb-2">Asiento</span>
+                <h3 class="card-title">Plopp Stool</h3>
+                <p class="designer-line mb-3">Oskar Zieta — 2008</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="product-price">30 €/día</span>
+                  <a href="catalogo.html" class="btn btn-ms btn-sm">Ver ficha</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <article class="product-card">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=500&q=75"
+                     alt="Butaca Gatcpac, 1933">
+              </div>
+              <div class="card-body">
+                <span class="badge-cat d-inline-block mb-2">Asiento</span>
+                <h3 class="card-title">Butaca Gatcpac</h3>
+                <p class="designer-line mb-3">GATCPAC — 1933</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="product-price">65 €/día</span>
+                  <a href="catalogo.html" class="btn btn-ms btn-sm">Ver ficha</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="site-footer" aria-label="Pie de página">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <a href="index.html"><img src="media/foto/marca/logo-margo-space.png" alt="Margo Space Design" class="footer-logo"></a>
+          <p class="small mb-3">Alquiler y venta de objetos de diseño icónicos en Barcelona.</p>
+          <a href="https://www.instagram.com/margo__space/" target="_blank" rel="noopener noreferrer"
+             aria-label="Instagram" style="color:var(--ms-warm); font-size:1.4rem;">
+            <i class="bi bi-instagram"></i>
+          </a>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Navegar</h5>
+          <ul class="footer-nav">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h5>Categorías</h5>
+          <ul class="footer-nav">
+            <li><a href="catalogo.html">Asiento</a></li>
+            <li><a href="catalogo.html">Iluminación</a></li>
+            <li><a href="catalogo.html">Mobiliario</a></li>
+            <li><a href="catalogo.html">Menaje</a></li>
+            <li><a href="catalogo.html">Atrezzo &amp; Peanas</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h5>Contacto</h5>
+          <address style="font-style:normal; font-size:0.88rem; color:rgba(255,255,255,0.65); line-height:1.8;">
+            Barcelona, España<br>
+            <a href="mailto:info@margospacedesign.com">info@margospacedesign.com</a><br>
+            <a href="tel:+34934000000">+34 934 000 000</a>
+          </address>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="text-center footer-copy mb-0">&copy; 2025 Margo Space Design. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

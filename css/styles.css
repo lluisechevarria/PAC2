@@ -1,0 +1,920 @@
+/* ============================================================
+   MARGO SPACE — Hoja de estilos personalizada
+   Rediseño responsivo con Bootstrap 5
+   Máster en Gestión de Contenidos Digitales — PAC 2
+   ============================================================ */
+
+/* ---- Importación de tipografías Google Fonts ---- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ---- Variables de diseño ---- */
+:root {
+  --ms-dark:        #111111;
+  --ms-black:       #1a1a1a;
+  --ms-white:       #f9f7f4;
+  --ms-warm:        #c4a882;
+  --ms-warm-light:  #ede8e0;
+  --ms-warm-mid:    #d9c9b4;
+  --ms-gray:        #6b6b6b;
+  --ms-gray-light:  #aeaaa4;
+  --ms-border:      #ddd9d3;
+  --ms-radius:      2px;
+  --ms-transition:  all 0.28s ease;
+  --ms-shadow:      0 8px 32px rgba(0,0,0,0.08);
+  --ms-shadow-hover:0 16px 48px rgba(0,0,0,0.14);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--ms-white);
+  color: var(--ms-black);
+  padding-top: 72px; /* offset navbar fija */
+  line-height: 1.65;
+}
+
+/* Jerarquía tipográfica */
+h1, h2, h3,
+.display-1, .display-2, .display-3, .display-4 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.15;
+}
+
+h4, h5, h6 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+}
+
+a { transition: var(--ms-transition); }
+
+img { max-width: 100%; display: block; }
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar-ms {
+  background-color: rgba(17, 17, 17, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 0.85rem 0;
+}
+
+.navbar-ms .navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+
+.navbar-ms .navbar-logo {
+  height: 36px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+.navbar-ms .brand-accent { color: var(--ms-warm); }
+
+.navbar-ms .nav-link {
+  color: rgba(255,255,255,0.78);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem !important;
+}
+
+.navbar-ms .nav-link:hover,
+.navbar-ms .nav-link.active {
+  color: var(--ms-warm);
+}
+
+.navbar-ms .navbar-toggler {
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.35rem 0.6rem;
+}
+
+/* ============================================================
+   HERO (index)
+   ============================================================ */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--ms-dark);
+  margin-top: -72px;
+  padding-top: 72px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center 30%;
+  opacity: 0.42;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.hero-title {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.72);
+  max-width: 440px;
+  line-height: 1.7;
+}
+
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ============================================================
+   PAGE HEADER (páginas interiores)
+   ============================================================ */
+.page-header {
+  background-color: var(--ms-dark);
+  color: #fff;
+  padding: 4.5rem 0 3rem;
+}
+
+.page-header h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 400;
+}
+
+.page-header p { color: rgba(255,255,255,0.65); }
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+nav[aria-label="breadcrumb"] .breadcrumb {
+  margin-bottom: 0;
+  background: transparent;
+}
+
+.breadcrumb-item a {
+  color: var(--ms-warm);
+  text-decoration: none;
+}
+
+.breadcrumb-item.active { color: rgba(255,255,255,0.55); }
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "→";
+  color: rgba(255,255,255,0.35);
+}
+
+/* ============================================================
+   CATEGORY CHIPS (nav de categorías)
+   ============================================================ */
+.category-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.45rem 1.15rem;
+  background: var(--ms-warm-light);
+  color: var(--ms-black);
+  border-radius: 100px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: var(--ms-transition);
+  border: 1px solid transparent;
+}
+
+.chip:hover,
+.chip.active {
+  background: var(--ms-dark);
+  color: #fff;
+}
+
+/* ============================================================
+   PRODUCT CARDS
+   ============================================================ */
+.product-card {
+  border: 1px solid var(--ms-border);
+  border-radius: var(--ms-radius);
+  overflow: hidden;
+  transition: var(--ms-transition);
+  background: #fff;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--ms-shadow-hover);
+  border-color: transparent;
+}
+
+.product-card .card-img-wrap {
+  overflow: hidden;
+  height: 270px;
+}
+
+.product-card .card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.product-card:hover .card-img-wrap img {
+  transform: scale(1.05);
+}
+
+.product-card .card-body {
+  padding: 1.2rem 1.3rem;
+  border-top: 1px solid var(--ms-border);
+}
+
+.product-card .card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.product-card .designer-line {
+  font-size: 0.78rem;
+  color: var(--ms-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.product-price {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ms-warm);
+}
+
+/* ============================================================
+   BADGES
+   ============================================================ */
+.badge-cat {
+  background-color: var(--ms-warm-light);
+  color: var(--ms-black);
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  padding: 0.35em 0.75em;
+}
+
+.badge-avail {
+  background-color: #d4edda;
+  color: #155724;
+  font-size: 0.72rem;
+  border-radius: 100px;
+  padding: 0.35em 0.75em;
+}
+
+.badge-reserv {
+  background-color: #fdecea;
+  color: #922b21;
+  font-size: 0.72rem;
+  border-radius: 100px;
+  padding: 0.35em 0.75em;
+}
+
+/* ============================================================
+   BOTONES PERSONALIZADOS
+   ============================================================ */
+.btn-ms {
+  background-color: var(--ms-dark);
+  color: #fff;
+  border: 1px solid var(--ms-dark);
+  padding: 0.7rem 1.8rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--ms-radius);
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--ms-transition);
+}
+
+.btn-ms:hover {
+  background-color: var(--ms-warm);
+  border-color: var(--ms-warm);
+  color: var(--ms-dark);
+}
+
+.btn-ms-outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.45);
+  padding: 0.7rem 1.8rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--ms-radius);
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--ms-transition);
+}
+
+.btn-ms-outline:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--ms-dark);
+}
+
+.btn-ms-warm {
+  background-color: var(--ms-warm);
+  color: var(--ms-dark);
+  border: 1px solid var(--ms-warm);
+  padding: 0.7rem 1.8rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--ms-radius);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--ms-transition);
+}
+
+.btn-ms-warm:hover {
+  background-color: var(--ms-dark);
+  border-color: var(--ms-dark);
+  color: #fff;
+}
+
+/* ============================================================
+   TABLA DE INVENTARIO
+   ============================================================ */
+.ms-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.ms-table thead tr {
+  background-color: var(--ms-dark);
+  color: #fff;
+}
+
+.ms-table thead th {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 1rem 1.1rem;
+  border: none;
+  white-space: nowrap;
+}
+
+.ms-table tbody td {
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--ms-border);
+  font-size: 0.88rem;
+  vertical-align: middle;
+}
+
+.ms-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ms-table tbody tr:hover {
+  background-color: var(--ms-warm-light);
+}
+
+/* ============================================================
+   ESTADÍSTICAS
+   ============================================================ */
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 600;
+  color: var(--ms-warm);
+  line-height: 1;
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ms-gray);
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* ============================================================
+   SECCIÓN CTA
+   ============================================================ */
+.cta-section {
+  background-color: var(--ms-dark);
+  color: #fff;
+  padding: 6rem 0;
+}
+
+/* ============================================================
+   ACCORDION
+   ============================================================ */
+.accordion-ms .accordion-button {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  background: #fff;
+  color: var(--ms-black);
+  border-radius: 0 !important;
+  box-shadow: none;
+}
+
+.accordion-ms .accordion-button:not(.collapsed) {
+  background-color: var(--ms-warm-light);
+  color: var(--ms-black);
+}
+
+.accordion-ms .accordion-item {
+  border: 1px solid var(--ms-border);
+  border-radius: 0 !important;
+  margin-bottom: 0.4rem;
+}
+
+/* ============================================================
+   EQUIPO (nosotros)
+   ============================================================ */
+.team-card {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background: #fff;
+  border: 1px solid var(--ms-border);
+  transition: var(--ms-transition);
+}
+
+.team-card:hover {
+  box-shadow: var(--ms-shadow);
+  border-color: transparent;
+}
+
+.team-card .team-photo {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--ms-warm);
+  margin: 0 auto 1.2rem;
+}
+
+.team-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  margin-bottom: 0.2rem;
+}
+
+.team-card .team-role {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ms-warm);
+  font-weight: 600;
+}
+
+/* ============================================================
+   SECCIÓN VÍDEO
+   ============================================================ */
+.video-section {
+  background-color: #0d0d0d;
+  color: #fff;
+  padding: 5rem 0;
+}
+
+.video-section h2 { font-weight: 400; }
+
+/* ============================================================
+   SECCIÓN GRÁFICO (Highcharts)
+   ============================================================ */
+.chart-section {
+  background-color: var(--ms-warm-light);
+  padding: 5rem 0;
+}
+
+#inventario-chart { min-height: 380px; }
+
+/* ============================================================
+   FORMULARIO DE CONTACTO
+   ============================================================ */
+.form-control,
+.form-select {
+  border: 1px solid var(--ms-border);
+  border-radius: var(--ms-radius);
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  background: #fff;
+  color: var(--ms-black);
+  transition: var(--ms-transition);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--ms-warm);
+  box-shadow: 0 0 0 3px rgba(196,168,130,0.18);
+  outline: none;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ms-black);
+  margin-bottom: 0.4rem;
+}
+
+.form-check-input:checked {
+  background-color: var(--ms-warm);
+  border-color: var(--ms-warm);
+}
+
+/* ============================================================
+   INFO DE CONTACTO (aside)
+   ============================================================ */
+.contact-info-block {
+  background: var(--ms-dark);
+  color: #fff;
+  padding: 2.5rem;
+  height: 100%;
+}
+
+.contact-info-block h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.contact-detail {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.contact-detail i {
+  font-size: 1.1rem;
+  color: var(--ms-warm);
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.contact-detail p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   FILTROS SIDEBAR (catálogo)
+   ============================================================ */
+.filter-sidebar h6 {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--ms-gray);
+  margin-bottom: 0.75rem;
+}
+
+.filter-sidebar .form-check-label {
+  font-size: 0.88rem;
+}
+
+.price-range-filter {
+  border-top: 1px solid var(--ms-border);
+  padding-top: 1rem;
+}
+
+.price-range-current,
+.price-range-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.price-range-current {
+  margin-bottom: 0.7rem;
+  font-size: 0.8rem;
+  color: var(--ms-gray);
+}
+
+.price-range-current strong,
+.price-range-field strong {
+  color: var(--ms-black);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.price-range-inputs {
+  margin-bottom: 0.75rem;
+}
+
+.price-range-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.price-range-field .form-label {
+  margin: 0;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ms-gray);
+}
+
+.price-range-slider {
+  position: relative;
+  height: 24px;
+  margin-bottom: 0.55rem;
+}
+
+.price-range-track,
+.price-range-fill {
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 999px;
+}
+
+.price-range-track {
+  left: 0;
+  right: 0;
+  background: var(--ms-warm-light);
+}
+
+.price-range-fill {
+  left: 0;
+  right: 0;
+  background: var(--ms-warm);
+}
+
+.price-range-control {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 24px;
+  margin: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+.price-range-control::-webkit-slider-runnable-track {
+  height: 4px;
+  background: transparent;
+}
+
+.price-range-control::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -6px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--ms-dark);
+  box-shadow: 0 0 0 1px var(--ms-warm);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.price-range-control::-moz-range-track {
+  height: 4px;
+  background: transparent;
+  border: 0;
+}
+
+.price-range-control::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--ms-dark);
+  box-shadow: 0 0 0 1px var(--ms-warm);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* ============================================================
+   ESPECIFICACIONES (ficha producto)
+   ============================================================ */
+.specs-table td:first-child {
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ms-gray);
+  width: 40%;
+}
+
+/* ============================================================
+   VALORES (nosotros)
+   ============================================================ */
+.values-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.values-list li {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--ms-border);
+}
+
+.values-list li:last-child { border-bottom: none; }
+
+.values-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--ms-warm-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ms-warm);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.values-list h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.values-list p {
+  font-size: 0.88rem;
+  color: var(--ms-gray);
+  margin: 0;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background-color: var(--ms-dark);
+  color: rgba(255,255,255,0.65);
+  padding: 4.5rem 0 2rem;
+}
+
+.footer-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+  margin-bottom: 0.75rem;
+  filter: brightness(0) invert(1);
+}
+
+.site-footer .footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #fff;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.site-footer h5 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 1.2rem;
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav li { margin-bottom: 0.55rem; }
+
+.footer-nav a {
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+
+.footer-nav a:hover { color: var(--ms-warm); }
+
+.footer-divider {
+  border-color: rgba(255,255,255,0.08);
+  margin: 2.5rem 0 1.5rem;
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ============================================================
+   RESPONSIVE OVERRIDES
+   ============================================================ */
+@media (max-width: 991.98px) {
+  .product-card .card-img-wrap { height: 230px; }
+}
+
+@media (max-width: 767.98px) {
+  body { padding-top: 64px; }
+
+  .page-header { padding: 3rem 0 2rem; }
+
+  .hero-title { font-size: clamp(2.2rem, 10vw, 3.2rem); }
+
+  .product-card .card-img-wrap { height: 200px; }
+
+  .contact-info-block { padding: 1.75rem; }
+
+  .cta-section { padding: 4rem 0; }
+}
+
+@media (max-width: 575.98px) {
+  .chip {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.85rem;
+  }
+
+  .navbar-ms .navbar-brand { font-size: 1.2rem; }
+}
+
+/* ============================================================
+   PAGE HEADER VARIANTE COMPACTA (para ficha de producto)
+   ============================================================ */
+.page-header-sm {
+  background-color: var(--ms-dark);
+  color: #fff;
+  padding: 2rem 0 1.5rem;
+}
+
+/* ============================================================
+   CONTACT INFO LABEL
+   ============================================================ */
+.contact-info-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 0.25rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+}
+
+.contact-info-block a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-info-block a:hover {
+  color: var(--ms-warm);
+}
