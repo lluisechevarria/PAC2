@@ -90,7 +90,7 @@
 
     <!-- =========================================================
          VÍDEO — Layout: full-width oscuro con ratio 16:9
-         Elemento: <iframe> YouTube con Bootstrap ratio utility
+          Elemento: <video> local con Bootstrap ratio utility
          ========================================================= -->
     <section class="video-section" aria-labelledby="video-heading">
       <div class="container">
@@ -106,13 +106,19 @@
           </div>
           <div class="col-lg-6">
             <div class="ratio ratio-16x9">
-              <iframe
-                src="https://www.youtube.com/embed/EdyC2DmHA6E?autoplay=1&loop=1&playlist=EdyC2DmHA6E&mute=1"
-                title="Margo Space Design — Producción audiovisual con objetos de diseño icónico"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-              </iframe>
+              <video
+                class="w-100 h-100"
+                autoplay
+                loop
+                muted
+                playsinline
+                controls
+                preload="metadata"
+                aria-label="Margo Space Design — Producción audiovisual con objetos de diseño icónico"
+                style="object-fit:cover;">
+                <source src="media/video/video_pac2.mp4" type="video/mp4">
+                Tu navegador no soporta vídeo HTML5.
+              </video>
             </div>
           </div>
         </div>
