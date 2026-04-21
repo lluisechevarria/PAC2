@@ -339,8 +339,29 @@ document.addEventListener('DOMContentLoaded', function () {
   var toast = document.getElementById('form-toast');
 
   if (form) {
+    /* Validación cruzada fecha desde/hasta */
+    var dateFrom = document.getElementById('f-date-from');
+    var dateTo   = document.getElementById('f-date-to');
+
+    function syncDateMin() {
+      if (dateFrom && dateTo && dateFrom.value) {
+        dateTo.min = dateFrom.value;
+        if (dateTo.value && dateTo.value < dateFrom.value) {
+          dateTo.value = dateFrom.value;
+        }
+      }
+    }
+    if (dateFrom) dateFrom.addEventListener('change', syncDateMin);
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      /* Validar que "hasta" no sea anterior a "desde" */
+      if (dateFrom && dateTo && dateFrom.value && dateTo.value && dateTo.value < dateFrom.value) {
+        dateTo.setCustomValidity('La fecha de fin debe ser igual o posterior a la de inicio.');
+      } else if (dateTo) {
+        dateTo.setCustomValidity('');
+      }
 
       /* Validación nativa de Bootstrap */
       if (!form.checkValidity()) {
