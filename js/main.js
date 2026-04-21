@@ -340,28 +340,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (form) {
     /* Validación cruzada fecha desde/hasta */
-    var dateFrom = document.getElementById('f-date-from');
-    var dateTo   = document.getElementById('f-date-to');
+    var dateFrom     = document.getElementById('f-date-from');
+    var dateTo       = document.getElementById('f-date-to');
+    var dateFromErr  = document.getElementById('f-date-from-error');
+    var dateToErr    = document.getElementById('f-date-to-error');
 
-    function syncDateMin() {
-      if (dateFrom && dateTo && dateFrom.value) {
-        dateTo.min = dateFrom.value;
-        if (dateTo.value && dateTo.value < dateFrom.value) {
-          dateTo.value = dateFrom.value;
-        }
+    function validateDates() {
+      if (!dateFrom || !dateTo) return;
+      var from = dateFrom.value;
+      var to   = dateTo.value;
+
+      /* Resetear errores previos */
+      dateFrom.setCustomValidity('');
+      dateTo.setCustomValidity('');
+      if (dateFromErr) dateFromErr.textContent = 'Selecciona una fecha válida.';
+      if (dateToErr)   dateToErr.textContent   = 'Selecciona una fecha válida.';
+
+      /* "Hasta" no puede ser anterior a "Desde" */
+      if (from && to && to < from) {
+        dateTo.setCustomValidity('La fecha de fin debe ser igual o posterior a la de inicio.');
+        if (dateToErr) dateToErr.textContent = 'La fecha de fin no puede ser anterior a la fecha de inicio.';
       }
+
+      /* "Desde" no puede ser posterior a "Hasta" */
+      if (from && to && from > to) {
+        dateFrom.setCustomValidity('La fecha de inicio no puede ser posterior a la fecha de fin.');
+        if (dateFromErr) dateFromErr.textContent = 'La fecha de inicio no puede ser posterior a la fecha de fin.';
+      }
+
+      /* Actualizar atributos min/max para refuerzo nativo */
+      if (from) dateTo.min = from;
+      if (to)   dateFrom.max = to;
     }
-    if (dateFrom) dateFrom.addEventListener('change', syncDateMin);
+
+    if (dateFrom) dateFrom.addEventListener('change', validateDates);
+    if (dateTo)   dateTo.addEventListener('change', validateDates);
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      /* Validar que "hasta" no sea anterior a "desde" */
-      if (dateFrom && dateTo && dateFrom.value && dateTo.value && dateTo.value < dateFrom.value) {
-        dateTo.setCustomValidity('La fecha de fin debe ser igual o posterior a la de inicio.');
-      } else if (dateTo) {
-        dateTo.setCustomValidity('');
-      }
+      /* Ejecutar validación cruzada antes del checkValidity nativo */
+      validateDates();
 
       /* Validación nativa de Bootstrap */
       if (!form.checkValidity()) {
