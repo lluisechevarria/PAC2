@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lluisechevarria.github.io/PAC2/sitemap.xml
