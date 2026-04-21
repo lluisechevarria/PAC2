@@ -99,7 +99,21 @@ img { max-width: 100%; display: block; }
 
 .navbar-ms .navbar-toggler {
   border: 1px solid rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.08);
   padding: 0.35rem 0.6rem;
+}
+
+.navbar-ms .navbar-toggler:hover {
+  background-color: rgba(255,255,255,0.14);
+  border-color: rgba(255,255,255,0.42);
+}
+
+.navbar-ms .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.22rem rgba(196,168,130,0.32);
+}
+
+.navbar-ms .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28249, 247, 244, 0.96%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.4' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* ============================================================
