@@ -79,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
       max: priceConfig.max
     };
 
-    var reservedTitles = ['Mammut Bordlampa', 'Silla Panton'];
     var categoryNames = {};
 
     catCbs.forEach(function (cb) {
@@ -92,10 +91,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var items = cards.map(function (card) {
       var badge = card.querySelector('.badge-cat');
       var column = card.closest('[data-category]') || card.parentElement;
-      var title = ((card.querySelector('.card-title') || {}).textContent || '').trim();
       var category = normalizeCategory(badge ? badge.textContent : column.dataset.category);
       var price = parsePrice((card.querySelector('.product-price') || {}).textContent);
-      var availability = reservedTitles.indexOf(title) !== -1 ? 'reservado' : 'disponible';
+      var availability = normalizeStatus(card.dataset.availability || column.dataset.availability || 'disponible');
 
       return {
         card: card,
