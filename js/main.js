@@ -329,6 +329,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     updatePriceUi();
     applyFilters();
+
+    /* Filtro por parámetro URL: catalogo.html?cat=asiento */
+    var urlCat = new URLSearchParams(window.location.search).get('cat');
+    if (urlCat) {
+      var urlCatNorm = normalizeCategory(urlCat);
+      catCbs.forEach(function (cb) {
+        cb.checked = normalizeCategory(cb.dataset.cat) === urlCatNorm;
+      });
+      chips.forEach(function (chip) {
+        var chipNorm = normalizeCategory(chip.dataset.filter);
+        chip.classList.toggle('active', chipNorm === urlCatNorm);
+      });
+      applyFilters();
+      /* Scroll suave al catálogo */
+      var grid = document.getElementById('view-grid');
+      if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }());
 
 
