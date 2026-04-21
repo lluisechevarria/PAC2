@@ -35,6 +35,7 @@ jobs:
         run: |
           mkdir -p _site
           cp *.html _site/
+          cp robots.txt sitemap.xml _site/
           cp -R css js media _site/
 
       - name: Upload Pages artifact

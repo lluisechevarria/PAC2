@@ -108,6 +108,76 @@ document.addEventListener('DOMContentLoaded', function () {
       return normalizeCategory(cb.dataset.cat);
     })));
 
+    function renderCatalogCategoryChart() {
+      var chartEl = document.getElementById('catalog-category-chart');
+      var counts = {};
+
+      if (!chartEl || typeof Highcharts === 'undefined') {
+        return;
+      }
+
+      allCategories.forEach(function (category) {
+        counts[category] = 0;
+      });
+
+      items.forEach(function (item) {
+        counts[item.category] = (counts[item.category] || 0) + 1;
+      });
+
+      Highcharts.chart('catalog-category-chart', {
+        accessibility: {
+          enabled: false
+        },
+        chart: {
+          type: 'pie',
+          backgroundColor: 'transparent',
+          style: { fontFamily: "'DM Sans', sans-serif" }
+        },
+        title: { text: null },
+        tooltip: {
+          pointFormat: '<b>{point.y} piezas</b>'
+        },
+        credits: { enabled: false },
+        colors: ['#1f4f46', '#c4a882', '#8e6246', '#d9c5a4', '#55605e', '#a77856'],
+        legend: {
+          align: 'center',
+          verticalAlign: 'bottom',
+          itemStyle: {
+            color: '#1a1a1a',
+            fontSize: '0.88rem',
+            fontWeight: '500'
+          }
+        },
+        plotOptions: {
+          pie: {
+            innerSize: '48%',
+            showInLegend: true,
+            dataLabels: {
+              enabled: true,
+              format: '<b>{point.name}</b><br>{point.y}',
+              style: {
+                color: '#1a1a1a',
+                textOutline: 'none',
+                fontSize: '0.8rem'
+              }
+            }
+          }
+        },
+        series: [{
+          name: 'Piezas',
+          colorByPoint: true,
+          data: allCategories.filter(function (category) {
+            return (counts[category] || 0) > 0;
+          }).map(function (category) {
+            return {
+              name: categoryNames[category] || category,
+              y: counts[category]
+            };
+          })
+        }]
+      });
+    }
+
     function getActiveCategories() {
       return Array.from(new Set(catCbs.filter(function (cb) {
         return cb.checked;
@@ -327,6 +397,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
+    renderCatalogCategoryChart();
     updatePriceUi();
     applyFilters();
 
