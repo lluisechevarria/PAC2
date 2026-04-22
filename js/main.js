@@ -472,12 +472,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
       /* Validación nativa de Bootstrap */
       if (!form.checkValidity()) {
+        /* Bootstrap usa was-validated para enseñar los mensajes de invalid-feedback. */
         form.classList.add('was-validated');
         return;
       }
 
       /* Mostrar toast de confirmación */
       if (toast) {
+        /* Aquí sí llamamos al JS de Bootstrap directamente para arrancar el toast. */
         var bsToast = new bootstrap.Toast(toast, { delay: 5000 });
         bsToast.show();
       }

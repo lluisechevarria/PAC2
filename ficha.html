@@ -6,6 +6,7 @@
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="description" content="Red &amp; Blue Chair — Gerrit Rietveld, 1918. Ficha técnica y condiciones de alquiler en Margo Space Design, Barcelona.">
   <title>Red &amp; Blue Chair en alquiler en Barcelona | Margo Space Design</title>
+  <!-- Bootstrap aquí nos da la base de la ficha: grid, modal, accordion, breadcrumb y utilidades responsive -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="media/foto/marca/logo-margo-space.png">
@@ -49,7 +50,8 @@
 <body>
 
   <!-- =========================================================
-       NAVBAR
+        NAVBAR
+        Igual que en el resto: Bootstrap resuelve el menú responsive y su collapse.
        ========================================================= -->
   <nav class="navbar navbar-expand-lg navbar-ms fixed-top" aria-label="Navegación principal">
     <div class="container">
@@ -77,7 +79,8 @@
   </nav>
 
   <!-- =========================================================
-       MODAL — Ampliar imagen (componente Bootstrap: Modal)
+      MODAL — Ampliar imagen (componente Bootstrap: Modal)
+      Aquí Bootstrap abre la foto en grande sin que tengamos que programar una ventana desde cero.
        ========================================================= -->
   <div class="modal fade" id="imgModal" tabindex="-1" aria-labelledby="imgModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -96,7 +99,8 @@
   </div>
 
   <!-- =========================================================
-       BREADCRUMB
+      BREADCRUMB
+      Estas migas también son estructura de Bootstrap.
        ========================================================= -->
   <div class="page-header page-header-sm">
     <div class="container">
@@ -114,6 +118,7 @@
 
     <!-- =========================================================
          FICHA DE PRODUCTO — Layout: 2 columnas (imagen | info)
+         El layout lo monta el grid de Bootstrap con row + col-md-6.
          ========================================================= -->
     <section class="py-5 py-lg-6" aria-labelledby="product-title">
       <div class="container">
@@ -215,7 +220,7 @@
 
     <!-- =========================================================
          ACORDEÓN DE DETALLES — Layout: full-width, 3 secciones
-         Componente Bootstrap: Accordion
+         Esto es el Accordion de Bootstrap: abre y cierra bloques sin JS nuestro.
          ========================================================= -->
     <section class="py-5 bg-white" aria-labelledby="details-heading">
       <div class="container">
