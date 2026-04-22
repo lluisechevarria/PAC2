@@ -9,8 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
      1. Marcar enlace activo en la barra de navegación
      -------------------------------------------------------- */
   const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+  const isHomeRoute = currentFile === 'index.html';
   document.querySelectorAll('.navbar-ms .nav-link').forEach(function (link) {
-    if (link.getAttribute('href') === currentFile) {
+    var href = link.getAttribute('href');
+    if (href === currentFile || (isHomeRoute && (href === './' || href === 'index.html'))) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
     }
