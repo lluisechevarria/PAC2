@@ -6,6 +6,7 @@
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="description" content="Conoce Margo Space Design — nuestro equipo, valores y método de trabajo en el alquiler de objetos de diseño en Barcelona.">
   <title>Nosotros | Alquiler de objetos de diseño en Barcelona</title>
+  <!-- Bootstrap aquí nos resuelve el grid, el breadcrumb, la navbar y utilidades como ratio para el vídeo -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="media/foto/marca/logo-margo-space.png">
@@ -47,7 +48,8 @@
 <body>
 
   <!-- =========================================================
-       NAVBAR
+        NAVBAR
+        Bootstrap hace aquí el menú responsive y el collapse del botón hamburguesa.
        ========================================================= -->
   <nav class="navbar navbar-expand-lg navbar-ms fixed-top" aria-label="Navegación principal">
     <div class="container">
@@ -75,7 +77,8 @@
   </nav>
 
   <!-- =========================================================
-       PAGE HEADER
+      PAGE HEADER
+      El breadcrumb de arriba también es markup de Bootstrap.
        ========================================================= -->
   <div class="page-header">
     <div class="container">
@@ -94,12 +97,13 @@
 
     <!-- =========================================================
          HISTORIA — Layout: texto izq + imagen dcha (col-lg-6)
+         Esto funciona con el grid de Bootstrap: dos col-lg-6 que en móvil se apilan solas.
          ========================================================= -->
     <section class="py-5 py-lg-6" aria-labelledby="historia-heading">
       <div class="container">
         <div class="row align-items-center gy-4 gx-lg-5">
           <div class="col-lg-6 order-lg-2">
-            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=700&q=80"
+            <img src="media/foto/estudio/margo-space-interior.jpg"
                  class="img-fluid" style="border-radius:2px;"
                  alt="Interior del estudio Margo Space en Barcelona">
           </div>
@@ -121,7 +125,7 @@
 
     <!-- =========================================================
          VÍDEO — Layout: full-width oscuro con ratio 16:9
-          Elemento: <video> local con Bootstrap ratio utility
+         La clase ratio ratio-16x9 es de Bootstrap y nos ahorra calcular alto/ancho a mano.
          ========================================================= -->
     <section class="video-section" aria-labelledby="video-heading">
       <div class="container">
@@ -160,7 +164,8 @@
   </main>
 
   <!-- =========================================================
-       FOOTER
+      FOOTER
+      El footer usa otra vez row + col-* de Bootstrap para repartir bloques sin CSS extra raro.
        ========================================================= -->
   <footer class="site-footer" aria-label="Pie de página">
     <div class="container">
